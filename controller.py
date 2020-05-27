@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from scraper import halfBakedHarvest
 app = Flask(__name__)
+# app.debug = True
 api = Api(app)
 parser = reqparse.RequestParser()
 
@@ -20,5 +21,4 @@ api.add_resource(RecipeScraper, '/halfBakedHarvest')
 api.add_resource(HelloWorld, '/hello')
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    # app.run()
+    app.run(host='0.0.0.0')

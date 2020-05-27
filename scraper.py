@@ -3,7 +3,9 @@ from selenium.webdriver.chrome.options import Options
 
 def halfBakedHarvest(recipeLink):
     chrome_options = Options()
+    # chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--no-sandbox')
     driver = webdriver.Chrome('./chromedriver', options=chrome_options)
 
     driver.get(recipeLink)
