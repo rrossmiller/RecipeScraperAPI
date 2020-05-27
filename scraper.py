@@ -19,14 +19,17 @@ def halfBakedHarvest(recipeLink):
 
     ingredientsList = [y for x in ingredientsRaw for y in x]
     return ingredientsList
-    # outString = '<ul>\n'
-    # ingredients = []
-    # for x in ingredientsRaw:
-    #     for y in x:
-    #         line = '\t<li>'+ y + '</li>'
-    #         ingredients.append(line)
-    #
-    # outString = outString + "\n".join(ingredients) + '\n</ul>'
-    #
-    # with open('recipe.html','w') as outfile:
-    #     outfile.write(outString)
+
+
+if __name__ == '__main__':
+    link = input('paste link: ')
+    ingredients = halfBakedHarvest(link)
+    outList = []
+    for x in ingredients:
+        line = '\t<li>'+ x + '</li>'
+        outList.append(line)
+
+    outString = '<ul>\n'+ "\n".join(outList) + '\n</ul>'
+
+    with open('recipe.html','w') as outfile:
+        outfile.write(outString)
