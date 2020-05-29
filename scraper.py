@@ -6,10 +6,13 @@ def halfBakedHarvest(recipeLink):
     # chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome('./chromedriver', options=chrome_options)
+    driver = None
+    try:
+        driver = webdriver.Chrome('./chromedriver-mac', options=chrome_options)
+    except:
+        print('check the chrome driver')
 
     driver.get(recipeLink)
-
     ingredientsElems = driver.find_elements_by_class_name('wprm-recipe-ingredients')
     ingredientsRaw = []
     for elem in ingredientsElems:
