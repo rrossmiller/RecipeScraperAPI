@@ -14,7 +14,7 @@ class RecipeScraper(Resource):
         parser.add_argument('recipe', type=str, help='Link to the recipe')
         recipeLink = parser.parse_args()['recipe']
         ingredients = halfBakedHarvest(recipeLink)
-        return ingredients
+        return {'ingredients':ingredients}
 
 class HelloWorld(Resource):
     def get(self):
