@@ -3,7 +3,7 @@ from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 from scraper import halfBakedHarvest
 app = Flask(__name__)
-app.debug = True
+# app.debug = True
 # app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app)
 api = Api(app)
