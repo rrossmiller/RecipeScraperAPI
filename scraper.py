@@ -8,7 +8,7 @@ def halfBakedHarvest(recipeLink):
     chrome_options.add_argument('--no-sandbox')
     driver = None
     try:
-        driver = webdriver.Chrome('./chromedriver-mac', options=chrome_options)
+        driver = webdriver.Chrome('./chromedriver', options=chrome_options)
     except:
         print('check the chrome driver')
 
